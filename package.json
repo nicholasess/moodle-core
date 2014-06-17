@@ -1,0 +1,17 @@
+{
+  "name": "moodle",
+  "private": false,
+  "version": "0.0.1",
+  "description": "moodle",
+  "dependencies": {
+    "ejs": "^0.8.4"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "debug": "node debug app.js"
+  },
+  "main": "app.js",
+  "repository": "",
+  "author": "Nicholas Eduardo",
+  "license": ""
+}
