@@ -4,7 +4,7 @@
 
 Clone Moodle repository
 
-´´´git clone https://github.com/nicholasess/moodle´´´
+```git clone https://github.com/nicholasess/moodle```
 
 Enter in moodle directory
 
