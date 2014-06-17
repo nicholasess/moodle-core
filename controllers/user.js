@@ -6,6 +6,15 @@ module.exports = function(app) {
 	},
 	community: function(req, res){
 		res.render('user/community');	
+	},
+	profile: function(req, res){
+		res.render('user/profile');
+	},
+	show: function(req, res, next){
+		next();
+	},
+	edit: function(req, res){
+		res.render('user/edit');
 	}
 }
 	

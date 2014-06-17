@@ -1,17 +1,6 @@
-var express = require('express'),
-	load = require('express-load'),
-	app = express();
+'use strict';
 
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
+var Bootstrap = require(__dirname + '/lib/core/bootstrap.js');
 
-load('models')
-	.then('controllers')
-	.then('routes')
-	.into(app);
-
-app.listen(3000, function(){
-	console.log('Moodle no ar');
-});
-
+//Start
+Bootstrap.start();

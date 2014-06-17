@@ -1,17 +1,30 @@
 {
   "name": "moodle",
-  "private": false,
+  "private": true,
   "version": "0.0.1",
   "description": "moodle",
   "dependencies": {
-    "ejs": "^0.8.4"
+        "express": "~3.4.7",
+        "body-parser": "~1.0.2",
+        "cookie-parser": "~1.0.1",
+        "method-override": "~1.0.0",
+        "nodemon": "~1.2.0"
   },
   "scripts": {
     "start": "node app.js",
     "debug": "node debug app.js"
   },
   "main": "app.js",
-  "repository": "",
-  "author": "Nicholas Eduardo",
-  "license": ""
+  "repository": {
+        "type": "git",
+        "url": "git://github.com/nicholasess/moodle"
+  },
+  "author": {
+        "name": "Nicholas Eduardo",
+        "email": "nicholasess@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+        "moodle"
+    ]
 }

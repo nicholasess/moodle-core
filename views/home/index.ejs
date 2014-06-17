@@ -3,14 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<title>Moodle Nodejs</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-<h1>Moodle 3.0</h1>
-<h3>Bem Vindo</h3>
-<form method="post" action="/login">
-<input type="text" name="email">
-<input type="password" name="password">
-<button>Entrar</button>
-</form>
+<div class="container">
+      <form class="form-signin" role="form" method="post" action="/">
+        <h2 class="form-signin-heading text-center">Moodle 3.0</h2>
+        <input type="email" class="form-control" name="email" placeholder="Email address" required autofocus>
+        <input type="password" class="form-control" name="password" placeholder="Password" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+      </form>
+
+    </div> <!-- /container -->
 </body>
 </html>		
