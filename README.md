@@ -19,3 +19,9 @@ Install dependencies
 ```
 npm install
 ```
+
+Start Project
+
+```
+node app
+```
