@@ -11,10 +11,19 @@ module.exports = function(app) {
 		res.render('user/profile');
 	},
 	show: function(req, res, next){
-		next();
+		res.render('user/edit');
 	},
 	edit: function(req, res){
-		res.render('user/edit');
+		next();
+	},
+	nota: function(req, res){
+		res.render('user/nota');	
+	},
+	oportunity: function(req, res){
+		res.render('user/oportunity');		
+	},
+	doc: function(req, res){
+		res.render('user/doc');	
 	}
 }
 	
