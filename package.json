@@ -4,11 +4,12 @@
   "version": "0.0.1",
   "description": "moodle",
   "dependencies": {
-        "express": "~3.4.7",
+        "express": "4.0.0",
+        "ejs": "1.0.0",
+        "express-load": "1.1.14",
         "body-parser": "~1.0.2",
         "cookie-parser": "~1.0.1",
-        "method-override": "~1.0.0",
-        "nodemon": "~1.2.0"
+        "method-override": "~1.0.0"
   },
   "scripts": {
     "start": "node app.js",
