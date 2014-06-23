@@ -3,3 +3,4 @@ module.exports = function(app){
 	app.get('/',home.index);
 	app.post('/',home.login);
 }
+

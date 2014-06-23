@@ -1,31 +1,34 @@
 {
   "name": "moodle",
-  "private": true,
   "version": "0.0.1",
-  "description": "moodle",
-  "dependencies": {
-        "express": "4.0.0",
-        "ejs": "1.0.0",
-        "express-load": "1.1.14",
-        "body-parser": "~1.0.2",
-        "cookie-parser": "~1.0.1",
-        "method-override": "~1.0.0"
-  },
-  "scripts": {
-    "start": "node app.js",
-    "debug": "node debug app.js"
-  },
+  "description": "Moodle Nodejs",
   "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.0.2",
+    "cookie-parser": "^1.0.1",
+    "ejs": "^1.0.0",
+    "express": "^4.0.0",
+    "express-load": "^1.1.14",
+    "express-session": "^1.5.1",
+    "i18n": "^0.5.0",
+    "method-override": "^1.0.2",
+    "nodemon": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
-        "type": "git",
-        "url": "git://github.com/nicholasess/moodle"
+    "type": "git",
+    "url": "https://github.com/nicholasess/moodle.git"
   },
-  "author": {
-        "name": "Nicholas Eduardo",
-        "email": "nicholasess@gmail.com"
-  },
-  "license": "MIT",
   "keywords": [
-        "moodle"
-    ]
+    "moodle"
+  ],
+  "author": "Nicholas Eduardo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nicholasess/moodle/issues"
+  },
+  "homepage": "https://github.com/nicholasess/moodle"
 }
