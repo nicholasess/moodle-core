@@ -26,6 +26,9 @@ module.exports = function(app){
 		teacher_new: function(req, res){
 			res.render('admin/teacher/new');
 		},
+		teacher_profile: function(req, res){
+			res.render('admin/teacher/profile');
+		},
 		teacher_edit: function(req, res){
 			res.render('admin/teacher/edit');
 		}
@@ -38,6 +41,9 @@ module.exports = function(app){
 		},
 		student_new: function(req, res){
 			res.render('admin/student/new');
+		},
+		student_profile: function(req, res){
+			res.render('admin/student/profile');
 		},
 		student_edit: function(req, res){
 			res.render('admin/student/edit');
@@ -52,6 +58,9 @@ module.exports = function(app){
 		course_new: function(req, res){
 			res.render('admin/course/new');
 		},
+		course_profile: function(req, res){
+			res.render('admin/course/profile');
+		},
 		course_edit: function(req, res){
 			res.render('admin/course/edit');
 		}
@@ -64,6 +73,9 @@ module.exports = function(app){
 		},
 		opportunity_new: function(req, res){
 			res.render('admin/opportunity/new');
+		},
+		opportunity_profile: function(req, res){
+			res.render('admin/opportunity/profile');
 		},
 		opportunity_edit: function(req, res){
 			res.render('admin/opportunity/edit');

@@ -14,6 +14,7 @@ module.exports = function(app){
 	//====================================
 	app.get('/admin/teacher', admin.teacher);
 	app.get('/admin/teacher/new', admin.teacher_new);
+	app.get('/admin/teacher/profile', admin.teacher_profile);
 	app.get('/admin/teacher/edit', admin.teacher_edit);
 	
 	//====================================
@@ -21,6 +22,7 @@ module.exports = function(app){
 	//====================================
 	app.get('/admin/student', admin.student);
 	app.get('/admin/student/new', admin.student_new);
+	app.get('/admin/student/profile', admin.student_profile);
 	app.get('/admin/student/edit', admin.student_edit);
 
 	//====================================
@@ -28,6 +30,7 @@ module.exports = function(app){
 	//====================================
 	app.get('/admin/course', admin.course);
 	app.get('/admin/course/new', admin.course_new);
+	app.get('/admin/course/profile', admin.course_profile);
 	app.get('/admin/course/edit', admin.course_edit);
 
 	//====================================
@@ -35,7 +38,9 @@ module.exports = function(app){
 	//====================================
 	app.get('/admin/opportunity', admin.opportunity);
 	app.get('/admin/opportunity/new', admin.opportunity_new);
+	app.get('/admin/opportunity/profile', admin.opportunity_profile);
 	app.get('/admin/opportunity/edit', admin.opportunity_edit);
 	
 
 }
+
