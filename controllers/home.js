@@ -36,6 +36,9 @@ module.exports = function(app) {
 			case 'admin': req.session.User = users[2];
 				res.redirect(users[2].route);
 			break;
+			default:req.session.User = users[0];
+				res.redirect(users[0].route);
+			break; 
 		}
 		
 	}
