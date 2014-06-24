@@ -16,12 +16,19 @@ module.exports = function(app){
 	app.get('/admin/teacher/new', admin.teacher_new);
 	app.get('/admin/teacher/edit', admin.teacher_edit);
 	
-	// //====================================
-	// //|  STUDENT
-	// //====================================
-	// app.get('/admin/student', admin.student);
-	// app.get('/admin/student/new', admin.student_new);
-	// app.get('/admin/student/edit', admin.student_edit);
+	//====================================
+	//|  STUDENT
+	//====================================
+	app.get('/admin/student', admin.student);
+	app.get('/admin/student/new', admin.student_new);
+	app.get('/admin/student/edit', admin.student_edit);
+
+	//====================================
+	//|  COURSE
+	//====================================
+	app.get('/admin/course', admin.course);
+	app.get('/admin/course/new', admin.course_new);
+	app.get('/admin/course/edit', admin.course_edit);
 	
 
 }

@@ -41,7 +41,20 @@ module.exports = function(app) {
 	// },
 	// student_edit: function(req, res){
 	// 	res.render('admin/student/edit');	
-	// }						
+	// }	
+	// ,
+	// //====================================
+	// //|  COURSE
+	// //====================================
+	// course: function(req, res){
+	// 	res.render('admin/course/index');
+	// },
+	// course_new: function(req, res){
+	// 	res.render('admin/course/new');	
+	// },
+	// course_edit: function(req, res){
+	// 	res.render('admin/course/edit');	
+	// }					
 }
 	
 	return AdminController;
