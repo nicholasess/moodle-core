@@ -55,6 +55,19 @@ module.exports = function(app){
 		course_edit: function(req, res){
 			res.render('admin/course/edit');
 		}
+		,
+		//====================================
+		//|  OPPORTUNITY
+		//====================================
+		opportunity: function(req, res){
+			res.render('admin/opportunity');
+		},
+		opportunity_new: function(req, res){
+			res.render('admin/opportunity/new');
+		},
+		opportunity_edit: function(req, res){
+			res.render('admin/opportunity/edit');
+		}
 	}
 	return AdminController;
 }

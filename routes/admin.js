@@ -29,6 +29,13 @@ module.exports = function(app){
 	app.get('/admin/course', admin.course);
 	app.get('/admin/course/new', admin.course_new);
 	app.get('/admin/course/edit', admin.course_edit);
+
+	//====================================
+	//|  OPPORTUNITY
+	//====================================
+	app.get('/admin/opportunity', admin.opportunity);
+	app.get('/admin/opportunity/new', admin.opportunity_new);
+	app.get('/admin/opportunity/edit', admin.opportunity_edit);
 	
 
 }
