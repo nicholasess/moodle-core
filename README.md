@@ -2,10 +2,12 @@
 
 ## Getting Started
 
-Clone Moodle repository
+Fork this project
+
+Clone your Moodle repository
 
 ```
-git clone https://github.com/nicholasess/moodle
+git clone https://github.com/[yourusername]/moodle
 ```
 
 Enter in moodle directory
