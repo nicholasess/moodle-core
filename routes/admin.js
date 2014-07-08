@@ -1,5 +1,5 @@
 module.exports = function(app){
-	var admin = app.controllers.admin;
+	var admin = app.controllers.AdminController;
 	app.get('/admin', admin.index);
 
 	//====================================

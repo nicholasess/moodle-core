@@ -1,5 +1,5 @@
 module.exports = function(app){
-	var com = app.controllers.community;
-	app.get('/community/:id',com.index);
+	var com = app.controllers.CommunityController;
 
+	app.get('/community/:id',com.index);
 }
