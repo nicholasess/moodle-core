@@ -1,6 +1,12 @@
+'use strict';
 module.exports = function(app){
 	var admin = app.controllers.AdminController;
+	
+	//====================================
+	//|  ADMIN
+	//====================================
 	app.get('/admin', admin.index);
+	app.get('/admin/index', admin.index);
 
 	//====================================
 	//|  COMMUNITY
@@ -8,7 +14,7 @@ module.exports = function(app){
 	app.get('/admin/community', admin.community);
 	app.get('/admin/community/new', admin.community_new);
 	app.get('/admin/community/edit', admin.community_edit);
-	
+
 	//====================================
 	//|  TEACHER
 	//====================================
@@ -41,6 +47,5 @@ module.exports = function(app){
 	app.get('/admin/opportunity/profile', admin.opportunity_profile);
 	app.get('/admin/opportunity/edit', admin.opportunity_edit);
 	
-
 }
 

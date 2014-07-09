@@ -1,5 +1,7 @@
+'use strict';
 module.exports = function(app){
-	var AdminController = {
+	var User = app.models.User,
+		AdminController = {
 		index: function(req, res){
 			res.render('admin/index');
 		}
@@ -37,7 +39,14 @@ module.exports = function(app){
 		//|  STUDENT
 		//====================================
 		student: function(req, res){
-			res.render('admin/student/');
+		 User
+		 .find()
+		 .where('typeUser').equals(1)
+		 .exec(function(err, user){
+		 if(err) console.log('erro ao buscar student', err);
+		
+		 	res.render('admin/student/', {students: user});
+		 });			
 		},
 		student_new: function(req, res){
 			res.render('admin/student/new');
