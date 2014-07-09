@@ -86,10 +86,42 @@ module.exports = function(app){
 		 });
 		},
 		student_profile: function(req, res){
-			res.render('admin/student/profile');
+		User
+		.findOne()
+		.where('inscription').equals(req.params.inscription)
+		.exec(function(err, user){
+		if(err) console.log('erro ao buscar student', err);
+			
+			console.log('student', user);
+		 	res.render('admin/student/profile', {student: user});
+		});		
 		},
 		student_edit: function(req, res){
-			res.render('admin/student/edit');
+			User
+		.findOne()
+		.where('inscription').equals(req.params.inscription)
+		.exec(function(err, user){
+		if(err) console.log('erro ao buscar student', err);
+			
+			console.log('student', user);
+		 	res.render('admin/student/edit', {student: user});
+		});	
+		},
+		student_update: function(req, res){
+		res.render('admin/student');  	
+		// var user = 	req.body.user;
+		// User
+		// .findOne()
+		// .where('inscription').equals(req.body.user.inscription)
+		// .exec(function(err, results){
+		// if(err) console.log('erro ao buscar student', err);
+			
+		// 	user.save(function (err) {
+		// 	  if (!err) console.log('Success!');
+				
+		// 	});
+		 	
+		// });	
 		}
 		,
 		//====================================
