@@ -48,7 +48,7 @@ module.exports = function(app){
 		 .find()
 		 .where('typeUser').equals(1)
 		 .exec(function(err, user){
-		 if(err) console.log('erro ao buscar student', err);
+		 if(err) throw err;
 		
 		 	res.render('admin/student/', {students: user});
 		 });			
@@ -60,7 +60,6 @@ module.exports = function(app){
 			userSave.save(function(err, result){
 				if(err) throw err;
 
-				console.log("salvo", result);
 				res.redirect('/admin/student/');	
 			});			
 		},
@@ -74,12 +73,12 @@ module.exports = function(app){
 		
 		console.log("user", user);
 		if(user.inscription == undefined){
-			console.log("undefined");
+			
 			var today = new Date();
 			var yr = today.getFullYear();
 			user.inscription = (yr +'0001').toString();
 		}else{
-			console.log("somou");
+			
 			user.inscription = filterInt(user.inscription) +1;
 		}	
 		 	res.render('admin/student/new', {inscription: user.inscription});
@@ -92,7 +91,7 @@ module.exports = function(app){
 		.exec(function(err, user){
 		if(err) console.log('erro ao buscar student', err);
 			
-			console.log('student', user);
+			
 		 	res.render('admin/student/profile', {student: user});
 		});		
 		},
@@ -103,7 +102,7 @@ module.exports = function(app){
 		.exec(function(err, user){
 		if(err) console.log('erro ao buscar student', err);
 			
-			console.log('student', user);
+			
 		 	res.render('admin/student/edit', {student: user});
 		});	
 		},
