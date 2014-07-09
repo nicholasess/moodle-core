@@ -1,0 +1,35 @@
+{% extends '../layout.html' %}
+{% block content %}
+<div class="row">
+	<div class="col-md-12">
+		<a href="/admin/student/new" class="btn btn-info">Cadastrar Aluno</a>
+	</div>
+</div>
+<br />
+<div class="row">
+	<div class="col-xs-12 col-md-12 col-sm-12">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<td>Matricula</td>
+					<td>Nome</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+			{% for student in students %}
+				<tr>
+					<td>{{ student.inscription }}</td>
+					<td>
+						{{ student.firstName }} {{ student.lastName }}
+					</td>
+					<td>
+						<a href="/admin/student/profile/{{ student.inscription }}">Editar</a>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endblock %}

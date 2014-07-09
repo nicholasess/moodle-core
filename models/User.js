@@ -18,13 +18,10 @@ module.exports = function(){
     	default: ''	
     },
     password: {
-    	type: String,
-    	required: true
+    	type: String
     },
     email: {
-    	type: String,
-    	required: true,
-    	unique: true
+    	type: String
     },
     typeUser: {
     	type: String,

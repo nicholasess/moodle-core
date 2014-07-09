@@ -28,6 +28,7 @@ module.exports = function(app){
 	//====================================
 	app.get('/admin/student', admin.student);
 	app.get('/admin/student/new', admin.student_new);
+	app.post('/admin/student/create', admin.student_create);
 	app.get('/admin/student/profile', admin.student_profile);
 	app.get('/admin/student/edit', admin.student_edit);
 

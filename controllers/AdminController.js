@@ -1,6 +1,11 @@
 'use strict';
 module.exports = function(app){
-	var User = app.models.User,
+	var filterInt = function (value) {
+ 		 if(/^(\-|\+)?([0-9]+|Infinity)$/.test(value))
+    		return Number(value);
+  			return NaN;
+	},
+		 User = app.models.User,
 		AdminController = {
 		index: function(req, res){
 			res.render('admin/index');
@@ -48,8 +53,37 @@ module.exports = function(app){
 		 	res.render('admin/student/', {students: user});
 		 });			
 		},
+		student_create: function(req, res){
+			var user = req.body.user,
+				userSave = new User(user);
+
+			userSave.save(function(err, result){
+				if(err) throw err;
+
+				console.log("salvo", result);
+				res.redirect('/admin/student/');	
+			});			
+		},
 		student_new: function(req, res){
-			res.render('admin/student/new');
+		User
+		.findOne()
+		.where('typeUser').equals(1)
+		.sort('inscription')
+		.exec(function(err, user){
+		if(err) console.log('erro ao buscar student', err);
+		
+		console.log("user", user);
+		if(user.inscription == undefined){
+			console.log("undefined");
+			var today = new Date();
+			var yr = today.getFullYear();
+			user.inscription = (yr +'0001').toString();
+		}else{
+			console.log("somou");
+			user.inscription = filterInt(user.inscription) +1;
+		}	
+		 	res.render('admin/student/new', {inscription: user.inscription});
+		 });
 		},
 		student_profile: function(req, res){
 			res.render('admin/student/profile');
