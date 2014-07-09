@@ -1,28 +1,26 @@
 # Moodle Nodejs - Status: Dev
 
-## Getting Started
+## Para usar
 
-Fork this project
-
-Clone your Moodle repository
+Clone o repositório
 
 ```
 git clone https://github.com/[yourusername]/moodle
 ```
 
-Enter in moodle directory
+Entra na pasta moodle
 
 ```
 cd moodle
 ```
 
-Install dependencies
+Instalar as dependencias
 
 ```
 npm install
 ```
 
-Start Project
+Iniciar o projeto
 
 ```
 node app

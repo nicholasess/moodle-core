@@ -79,7 +79,7 @@ module.exports = function(app){
 			var yr = today.getFullYear();
 			user.inscription = (yr +'0001').toString();
 		}else{
-			console.log("somou");
+			console.log("somou", user.inscription);
 			user.inscription = filterInt(user.inscription) +1;
 		}	
 		 	res.render('admin/student/new', {inscription: user.inscription});
