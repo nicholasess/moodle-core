@@ -47,6 +47,7 @@ module.exports = function(app){
 		 User
 		 .find()
 		 .where('typeUser').equals(1)
+		 .sort({inscription: 1})
 		 .exec(function(err, user){
 		 if(err) throw err;
 		
@@ -67,18 +68,17 @@ module.exports = function(app){
 		User
 		.findOne()
 		.where('typeUser').equals(1)
-		.sort('inscription')
+		.sort({inscription: -1})
 		.exec(function(err, user){
 		if(err) console.log('erro ao buscar student', err);
 		
 		console.log("user", user);
-		if(user.inscription == undefined){
-			
+		if(!user){
 			var today = new Date();
 			var yr = today.getFullYear();
 			user.inscription = (yr +'0001').toString();
+
 		}else{
-			
 			user.inscription = filterInt(user.inscription) +1;
 		}	
 		 	res.render('admin/student/new', {inscription: user.inscription});
@@ -96,7 +96,7 @@ module.exports = function(app){
 		});		
 		},
 		student_edit: function(req, res){
-			User
+		User
 		.findOne()
 		.where('inscription').equals(req.params.inscription)
 		.exec(function(err, user){
@@ -107,20 +107,24 @@ module.exports = function(app){
 		});	
 		},
 		student_update: function(req, res){
-		res.render('admin/student');  	
-		// var user = 	req.body.user;
-		// User
-		// .findOne()
-		// .where('inscription').equals(req.body.user.inscription)
-		// .exec(function(err, results){
-		// if(err) console.log('erro ao buscar student', err);
+		var user = 	req.body.user;
+		User
+		.findOne()
+		.where('inscription').equals(user.inscription)
+		.exec(function(err, result){
+		if(err) console.log('erro ao buscar student', err);
 			
-		// 	user.save(function (err) {
-		// 	  if (!err) console.log('Success!');
-				
-		// 	});
+		result.firstName = user.firstName;
+		result.lastName  = user.lastName;
+		result.email     = user.email;
+
+		result.save(function (err) {
+            if (!err) console.log('Success!');
+		
+			  res.redirect('admin/student'); 			
+			});
 		 	
-		// });	
+		});	
 		}
 		,
 		//====================================
