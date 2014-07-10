@@ -70,9 +70,8 @@ module.exports = function(app){
 		.where('typeUser').equals(1)
 		.sort({inscription: -1})
 		.exec(function(err, user){
-		if(err) console.log('erro ao buscar student', err);
+		if(err) throw err;
 		
-		console.log("user", user);
 		if(!user){
 			var today = new Date();
 			var yr = today.getFullYear();
@@ -89,7 +88,7 @@ module.exports = function(app){
 		.findOne()
 		.where('inscription').equals(req.params.inscription)
 		.exec(function(err, user){
-		if(err) console.log('erro ao buscar student', err);
+		if(err) throw err;
 			
 			
 		 	res.render('admin/student/profile', {student: user});
@@ -100,7 +99,7 @@ module.exports = function(app){
 		.findOne()
 		.where('inscription').equals(req.params.inscription)
 		.exec(function(err, user){
-		if(err) console.log('erro ao buscar student', err);
+		if(err) throw err;
 			
 			
 		 	res.render('admin/student/edit', {student: user});
@@ -112,14 +111,14 @@ module.exports = function(app){
 		.findOne()
 		.where('inscription').equals(user.inscription)
 		.exec(function(err, result){
-		if(err) console.log('erro ao buscar student', err);
+		if(err) throw err;
 			
 		result.firstName = user.firstName;
 		result.lastName  = user.lastName;
 		result.email     = user.email;
 
 		result.save(function (err) {
-            if (!err) console.log('Success!');
+            if (err) throw err;
 		
 			  res.redirect('admin/student'); 			
 			});
