@@ -12,7 +12,8 @@ module.exports = function(app) {
 		User.findOne({inscription: inscription, password: password}).exec(function(err, user){
 			if(err) throw err;
 			
-			switch(user.typeUser){
+			if(user){
+				switch(user.typeUser){
 				case '1': res.redirect('/student/');
 				break;
 
@@ -21,7 +22,11 @@ module.exports = function(app) {
 
 				case '5': res.redirect('admin/');
 				break;
+				}	
+			}else{
+				res.redirect('/');
 			}
+			
 		});
 						
 	}
