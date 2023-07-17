@@ -10,7 +10,7 @@
     "express-load": "^1.1.14",
     "method-override": "^1.0.2",
     "mongodb-uri": "^0.9.7",
-    "mongoose": "^3.8.12",
+    "mongoose": "^5.13.20",
     "nodemon": "^1.2.0",
     "swig": "^1.4.1"
   },
